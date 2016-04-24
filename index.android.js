@@ -7,16 +7,26 @@ import React, {
   AppRegistry,
   Component,
   StyleSheet,
+  DrawerLayoutAndroid,
   Text,
   View
 } from 'react-native';
 
 class AwesomeProject extends Component {
   render() {
+    var navigationView = (
+      <View style={styles.container}>
+        <Text style={styles.instructions}>I am a drawer</Text>
+      </View>
+    );
     return (
+      <DrawerLayoutAndroid
+      drawerWidth={200}
+      drawerPosition={DrawerLayoutAndroid.positions.Left}
+      renderNavigationView={() => navigationView}>
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          Welcome yangbo!
         </Text>
         <Text style={styles.instructions}>
           To get started, edit index.android.js
@@ -25,6 +35,8 @@ class AwesomeProject extends Component {
           Shake or press menu button for dev menu
         </Text>
       </View>
+      </DrawerLayoutAndroid>
+
     );
   }
 }
