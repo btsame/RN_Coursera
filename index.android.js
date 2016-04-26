@@ -7,6 +7,6 @@ import React, {
   AppRegistry
 } from 'react-native';
 
-import LoginComponent from './js/LoginComponent';
+import NavigatorComponent from './js/NavigatorComponent';
 
-AppRegistry.registerComponent('RN_Coursera', () => LoginComponent);
+AppRegistry.registerComponent('RN_Coursera', () => NavigatorComponent);
