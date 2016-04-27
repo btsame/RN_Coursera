@@ -4,20 +4,25 @@ import React, {View,
   TouchableOpacity} from 'react-native';
 
 import MainComponent from './MainComponent';
+import Colors from './Colors'
 
 export default class LoginComponent extends React.Component{
+  constructor(props){
+    super(props);
+  }
+
   render(){
-    var loginText = '登录';
-    var registerText = '注册';
+    var loginText = '登  录';
+    var registerText = '注  册';
     return(
       <View style={styles.container}>
-        <TouchableOpacity >
-          <Text>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>
             {loginText}
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity>
-          <Text>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>
             {registerText}
           </Text>
         </TouchableOpacity>
@@ -36,8 +41,30 @@ var styles = StyleSheet.create({
     backgroundColor: '#F5FCFF'
   },
   button: {
-    fontSize: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    
+    paddingVertical: 10,
+    paddingHorizontal: 30,
+
+    marginVertical: 10,
+
+    width: 200,
+    height: 50,
+
+    borderColor: '#ff0000',
+    borderWidth: 1,
+    borderStyle: 'dashed',
+    borderRadius: 20,
+    backgroundColor: '#ffff00',
+  },
+  buttonText: {
     textAlign: 'center',
-    margin: 10,
+    textAlignVertical: 'center',
+
+    color: '#00ff00',
+
+    fontWeight: 'bold',
+    fontSize: 20,
   },
 });
