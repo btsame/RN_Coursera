@@ -1,12 +1,13 @@
 import React, {
   View,
   Text,
+  Image,
   ListView,
   StyleSheet,
   ToastAndroid,
   TouchableOpacity
 } from 'react-native';
-
+import TitleBarComponent from './TitleBarComponent';
 var thisComponent;
 
 class DiscoverComponent extends React.Component{
@@ -26,11 +27,15 @@ class DiscoverComponent extends React.Component{
 
   render(){
     return(
+      <View style={styles.container}>
+      <TitleBarComponent/>
       <ListView
       contentContainerStyle={styles.list}
       dataSource={this.state.dataSource}
       renderRow = {this.renderRow}
       />
+
+      </View>
     );
   }
 
@@ -54,11 +59,22 @@ class DiscoverComponent extends React.Component{
 }
 
 var styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'column',
+  },
+  imageBackground: {
+    flex: 1,
+    width: 100,
+    height: 800
+
+  },
   list: {
     flex: 1,
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-around'
+
   },
   itemDecoration: {
     width: 150,
